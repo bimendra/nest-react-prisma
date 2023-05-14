@@ -1,14 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-
-import NxWelcome from './nx-welcome';
+import { useState, useEffect } from 'react';
 
 export function App() {
-  return (
-    <div>
-      <NxWelcome title="client" />
-    </div>
-  );
+  const [name, setName] = useState('');
+  useEffect(() => {
+    fetch('api')
+      .then((res) => res.json())
+      .then((r) => setName(r.name));
+  }, []);
+  return <div>{`Welcome, ${name}!`}</div>;
 }
 
 export default App;
