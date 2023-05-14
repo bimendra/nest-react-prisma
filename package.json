@@ -2,7 +2,9 @@
   "name": "nest-react-prisma",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx run api:build --configuration=production"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^9.1.1",
