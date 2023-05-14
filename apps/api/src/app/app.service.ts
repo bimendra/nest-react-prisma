@@ -4,9 +4,12 @@ const prisma = new PrismaClient();
 
 @Injectable()
 export class AppService {
-  async getData(): Promise<User> {
+  async getData(): Promise<any> {
     const user = await prisma.user.findFirst();
     console.log(user);
-    return user;
+    return {
+      name: user.name,
+      role: 'admin',
+    };
   }
 }
