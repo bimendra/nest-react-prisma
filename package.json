@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node ./dist/apps/api/main.js",
-    "build": "nx run api:build --configuration=production"
+    "start": "nx run api:serve --configuration=production",
+    "build": "nx run-many --targets=build --all"
   },
   "private": true,
   "dependencies": {
